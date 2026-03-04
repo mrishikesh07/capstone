@@ -1,18 +1,17 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import BookingPage from "./Pages/BookingPage";
 
-function Main(){
-    return(
-        <main>
-           <h1>Welcome to Little Lemon</h1>
-      <h2>Fresh Mediterranean Food</h2>
-
-      <p>
-        Little Lemon is a family-owned Mediterranean restaurant focused on
-        traditional recipes served with a modern twist.
-      </p>
-
-      <span>Reserve your table today!</span>
-        </main>
-    );
+function Main() {
+  return (
+    <main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
+    </main>
+  );
 }
+
 export default Main;
