@@ -4,6 +4,7 @@ function Header(){
     return(
         <header>
             <img src={Logo} alt="Little Lemon Logo" width={200}/>
+            <h1>Little Lemon</h1>
         </header>
     )
 }

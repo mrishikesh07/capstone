@@ -3,8 +3,15 @@ import React from "react";
 function Main(){
     return(
         <main>
-            <h2>Welcome to Little Lemon</h2>
-            <p>We serve the best Mediterranean food.</p>
+           <h1>Welcome to Little Lemon</h1>
+      <h2>Fresh Mediterranean Food</h2>
+
+      <p>
+        Little Lemon is a family-owned Mediterranean restaurant focused on
+        traditional recipes served with a modern twist.
+      </p>
+
+      <span>Reserve your table today!</span>
         </main>
     );
 }

@@ -1,8 +1,43 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #edefee;
+  color: #333;
 }
 
+/* Headings */
+
+h1 {
+  font-size: 40px;
+  color: #495e57;
+}
+
+h2 {
+  font-size: 32px;
+  color: #495e57;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4, h5, h6 {
+  font-size: 18px;
+}
+
+/* Paragraphs */
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Span */
+
+span {
+  color: #f4ce14;
+  font-weight: bold;
+}
 .App {
   display: grid;
   grid-template-columns: 1fr;
@@ -18,22 +53,34 @@ header {
   text-align: center;
 }
 
+
 /* Navigation */
+
+nav {
+  background-color: #495e57;
+}
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 20px;
   list-style: none;
-  padding: 10px;
   margin: 0;
-  background-color: #495e57;
+  padding: 15px;
+  gap: 25px;
+}
+
+nav li {
+  font-size: 18px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+
+nav a:hover {
+  color: #f4ce14;
 }
 
 /* Main */
@@ -46,8 +93,14 @@ main {
 /* Footer */
 
 footer {
-  background-color: #333;
+  background-color: #495e57;
   color: white;
-  text-align: center;
   padding: 20px;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
