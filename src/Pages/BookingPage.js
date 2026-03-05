@@ -1,9 +1,16 @@
-function BookingPage() {
+import BookingForm from "../Components/BookingForm";
+
+function BookingPage({ availableTimes, dispatch }) {
   return (
-    <section>
+    <main>
       <h1>Reserve a Table</h1>
-      <p>Book your table at Little Lemon.</p>
-    </section>
+
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+      />
+
+    </main>
   );
 }
 
