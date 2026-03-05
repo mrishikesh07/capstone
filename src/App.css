@@ -104,3 +104,25 @@ img {
   height: auto;
   border-radius: 10px;
 }
+
+.cta-button {
+  background-color: #F4CE14;
+  color: #333;
+  border: none;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6c100;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.cta-button:active {
+  transform: scale(0.97);
+}

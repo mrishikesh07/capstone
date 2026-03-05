@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./BookingForm.css";
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
 
@@ -33,10 +34,11 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-    >
+  <div className="booking-container">
+
+    <form className="booking-form" onSubmit={handleSubmit}>
+
+      <h2>Reserve a Table</h2>
 
       <label htmlFor="res-date">Choose date</label>
       <input
@@ -54,7 +56,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         onChange={(e) => setTime(e.target.value)}
         required
       >
-        <option value="">Select time</option>
+        <option value="">Choose time</option>
         {availableTimes.map((t) => (
           <option key={t}>{t}</option>
         ))}
@@ -67,9 +69,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         min="1"
         max="10"
         value={guests}
-        onChange={(e) => {setGuests(e.target.value);
-         
-         }}
+        onChange={(e) => setGuests(e.target.value)}
         required
       />
 
@@ -80,15 +80,21 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         onChange={(e) => setOccasion(e.target.value)}
         required
       >
-         <option value="">Select occasion</option>
+        <option value="">Select occasion</option>
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" disabled={!isValid} />
+      <input
+        type="submit"
+        value="Make Your reservation"
+        disabled={!isValid}
+      />
 
     </form>
-  );
+
+  </div>
+);
 }
 
 export default BookingForm;
