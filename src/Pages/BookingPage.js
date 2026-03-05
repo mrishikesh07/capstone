@@ -1,6 +1,6 @@
 import BookingForm from "../Components/BookingForm";
 
-function BookingPage({ availableTimes, dispatch }) {
+function BookingPage({ availableTimes, dispatch , submitForm }) {
   return (
     <main>
       <h1>Reserve a Table</h1>
@@ -8,6 +8,7 @@ function BookingPage({ availableTimes, dispatch }) {
       <BookingForm
         availableTimes={availableTimes}
         dispatch={dispatch}
+        submitForm={submitForm}
       />
 
     </main>
