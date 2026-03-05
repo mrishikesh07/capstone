@@ -6,6 +6,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
+ 
+
+  const isValid = date && time && guests >=1 && guests <= 10 && occasion;
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -41,6 +44,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         id="res-date"
         value={date}
         onChange={handleDateChange}
+        required
       />
 
       <label htmlFor="res-time">Choose time</label>
@@ -48,7 +52,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         id="res-time"
         value={time}
         onChange={(e) => setTime(e.target.value)}
+        required
       >
+        <option value="">Select time</option>
         {availableTimes.map((t) => (
           <option key={t}>{t}</option>
         ))}
@@ -57,22 +63,29 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
+        id="guests"
         min="1"
         max="10"
         value={guests}
-        onChange={(e) => setGuests(e.target.value)}
+        onChange={(e) => {setGuests(e.target.value);
+         
+         }}
+        required
       />
 
       <label htmlFor="occasion">Occasion</label>
       <select
+        id="occasion"
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
+        required
       >
+         <option value="">Select occasion</option>
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" />
+      <input type="submit" value="Make Your reservation" disabled={!isValid} />
 
     </form>
   );
